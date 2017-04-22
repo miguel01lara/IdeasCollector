@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">IdeasCollector</string>
+    <string name="app_name">Ideas Collector</string>
+    <string name="str_new_idea">New Idea</string>
 </resources>
