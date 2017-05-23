@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_item_least_time"
+        android:title="@string/nearest_first" />
+    <item
+        android:id="@+id/menu_item_most_time"
+        android:title="@string/furthest_first" />
+    <item
+        android:id="@+id/menu_item_complete"
+        android:title="@string/completed_only" />
+    <item
+        android:id="@+id/menu_item_incomplete"
+        android:title="@string/pending_only" />
+</menu>

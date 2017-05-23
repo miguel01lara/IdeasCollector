@@ -4,6 +4,12 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="myDarkBlue">#011923</color>
+    <color name="myDarkBlue">#072C3C</color>
     <color name="myLightBlue">#5EE0EF</color>
+    <color name="colorItemCompleted">#395EE0EF</color>
+    <color name="dialog_completed_bg">#002134</color>
+    <color name="item_incomplete_pressed">#435EE0EF</color>
+    <color name="item_incomplete_normal">#845EE0EF</color>
+    <color name="yellow">#FCF742</color>
+    <color name="my_dark_yellow">#7A7329</color>
 </resources>

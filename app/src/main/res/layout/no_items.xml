@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/no_items_to_display"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@null">
+
+    <TextView
+        android:id="@+id/no_item1"
+        android:padding="4dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="@string/no_items_to_display"
+        android:textSize="20dp"
+        android:foregroundGravity="bottom"/>
+
+    <TextView
+        android:id="@+id/no_item2"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_below="@id/no_item1"
+        android:text="@string/try_with_another_filter"
+        android:textSize="12dp"
+        android:textColor="@color/yellow"/>
+
+</RelativeLayout>

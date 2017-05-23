@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Ideas Collector</string>
     <string name="str_new_idea">New Idea</string>
+    <string name="str_add_idea_title">New Idea</string>
+    <string name="str_add_idea_btn">Add Idea</string>
+    <string name="furthest_first">Furthest First</string>
+    <string name="nearest_first">Nearest First</string>
+    <string name="completed_only">Completed Only</string>
+    <string name="pending_only">Pending Only</string>
+    <string name="no_items_to_display">No Items To Display</string>
+    <string name="try_with_another_filter">Try With Another Filter ;)</string>
 </resources>

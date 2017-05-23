@@ -1,9 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pro.dreamcode.ideascollector.ActivityMain">
+    android:background="@drawable/background"
+    tools:context="pro.dreamcode.ideascollector.ActivityMain"
+    android:orientation="vertical">
 
-   <include layout="@layout/initial_layout"></include>
-</RelativeLayout>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <include
+        layout="@layout/order_viewer_layout"
+        android:id= "@+id/order_viewer_layout" />
+
+    <pro.dreamcode.ideascollector.widgets.CollectorRecyclerView
+        android:id="@+id/rv_ideas"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <include
+        android:id="@+id/initial_layout"
+        layout="@layout/initial_layout" />
+
+    <Button
+        android:id="@+id/btn_create_idea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="2px"
+        android:layout_marginBottom="0dp"
+        android:textAllCaps="false"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/str_new_idea"
+        android:textColor="@color/text_new_idea_btn"
+        android:textSize="28sp"
+        android:background="@drawable/bg_new_idea_btn">
+
+    </Button>
+
+</LinearLayout>
