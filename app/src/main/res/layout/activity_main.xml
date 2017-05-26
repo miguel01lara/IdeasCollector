@@ -18,7 +18,7 @@
     <pro.dreamcode.ideascollector.widgets.CollectorRecyclerView
         android:id="@+id/rv_ideas"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/zero"
         android:layout_weight="1"/>
 
     <include
@@ -30,15 +30,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="2px"
-        android:layout_marginBottom="0dp"
+        android:layout_marginTop="@dimen/marginTop_newIdeaButton"
+        android:layout_marginBottom="@dimen/zero"
         android:textAllCaps="false"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:fontFamily="sans-serif"
-        android:text="@string/str_new_idea"
+        android:paddingTop="@dimen/padding_generalButtons"
+        android:paddingBottom="@dimen/padding_generalButtons"
+        android:text="@string/new_idea"
         android:textColor="@color/text_new_idea_btn"
-        android:textSize="28sp"
+        android:textSize="@dimen/textSize_regularUltraBig"
         android:background="@drawable/bg_new_idea_btn">
 
     </Button>

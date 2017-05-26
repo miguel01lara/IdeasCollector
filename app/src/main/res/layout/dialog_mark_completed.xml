@@ -2,8 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="48dp"
-    >
+    android:padding="@dimen/padding_dialogMarked">
 
     <ImageButton
         android:id="@+id/btn_close"
@@ -11,21 +10,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/close_x"
+        android:padding="@dimen/padding_closeBtnGeneral"
         android:layout_alignParentRight="true"
         android:layout_above="@+id/btn_mark_completed"/>
 
     <Button
         android:id="@+id/btn_mark_completed"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Mark Completed"
-        android:textSize="16sp"
+        android:text="@string/mark_completed"
+        android:textSize="@dimen/textSize_regularMedium"
         android:textColor="@android:color/white"
         android:background="@null"
         android:drawableTop="@drawable/ic_incomplete"
-        android:drawablePadding="16dp"
-        android:layout_marginTop="48dp"
+        android:drawablePadding="@dimen/padding_drawableMarkedButton"
+        android:layout_marginTop="@dimen/marginTop_markedButton"
         android:textAllCaps="false"/>
 
 </RelativeLayout>

@@ -1,6 +1,9 @@
 package pro.dreamcode.ideascollector;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ContextThemeWrapper;
@@ -8,12 +11,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import io.realm.Realm;
 import io.realm.RealmChangeListener;
@@ -24,16 +27,17 @@ import pro.dreamcode.ideascollector.adapters.Filter;
 import pro.dreamcode.ideascollector.adapters.MarkListener;
 import pro.dreamcode.ideascollector.adapters.SimpleTouchCallback;
 import pro.dreamcode.ideascollector.beans.Ideas;
+import pro.dreamcode.ideascollector.services.NotificationService;
 import pro.dreamcode.ideascollector.widgets.CollectorRecyclerView;
 
 public class ActivityMain extends AppCompatActivity {
 
-    private static final String TAG = "MIKE";
     private Toolbar toolbar;
     private LinearLayout orderLayout;
     private CollectorRecyclerView listIdeas;
     private Button addNew;
     private Button orderBtn;
+    private TextView orderHolder;
     private PopupMenu popupMenu;
     private Realm realmMgmt;
     private AdapterIdeas adapter;
@@ -53,7 +57,6 @@ public class ActivityMain extends AppCompatActivity {
                 public void execute(Realm realm) {
                     realmRes.get(position).setCompleted(true);
                     adapter.notifyDataSetChanged();
-                    //Log.d(TAG, "markCompletedInRealm: " + realmRes.get(position).isCompleted());
                 }
             });
         }
@@ -120,7 +123,6 @@ public class ActivityMain extends AppCompatActivity {
     private RealmChangeListener realmListener = new RealmChangeListener() {
         @Override
         public void onChange(Object element) {
-            Log.d(TAG, "onChange");
             adapter.update(realmRes);
         }
     };
@@ -135,6 +137,7 @@ public class ActivityMain extends AppCompatActivity {
         listIdeas = (CollectorRecyclerView) findViewById(R.id.rv_ideas);
         addNew = (Button) findViewById(R.id.btn_create_idea);
         orderBtn = (Button) findViewById(R.id.btn_set_order);
+        orderHolder = (TextView) findViewById(R.id.order_holder);
         addNew.setOnClickListener(clickListener);
         orderBtn.setOnClickListener(clickListener);
 
@@ -159,6 +162,17 @@ public class ActivityMain extends AppCompatActivity {
         SimpleTouchCallback callback = new SimpleTouchCallback(adapter);
         ItemTouchHelper helper = new ItemTouchHelper(callback);
         helper.attachToRecyclerView(listIdeas);
+        AppIdeasCollector.setRalewayThin(this, addNew, orderBtn, orderHolder);
+
+        if (toolbar.getChildAt(0) instanceof TextView) {
+            TextView title = (TextView) toolbar.getChildAt(0);
+            AppIdeasCollector.setRalewayThin(this, title);
+        }
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        Intent intent = new Intent(this, NotificationService.class);
+        PendingIntent pendingIntent = PendingIntent.getService(this, 100, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, 1000, 5000, pendingIntent);
     }
 
     private void queryAccordingToFilter(int filterOption) {

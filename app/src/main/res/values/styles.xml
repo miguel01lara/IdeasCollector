@@ -1,13 +1,16 @@
 <resources>
 
+    <style name="AppTheme.Base" parent="Theme.AppCompat.NoActionBar"></style>
+
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+
+    <style name="AppTheme" parent="AppTheme.Base">
         <!-- Customize your theme here. -->
         <item name="android:popupMenuStyle">@style/popupMenuStyle</item>
     </style>
 
     <style name="MyDialogTheme" parent="Theme.AppCompat.Dialog" >
-        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowBackground">@color/myDarkBlueTransparent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:windowNoTitle">true</item>
@@ -16,9 +19,22 @@
 
     <style name="popupMenuStyle" parent="AppTheme">
         <item name="android:textColor">@color/myDarkBlue</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:textStyle">italic</item>
-        <item name="android:itemBackground">#f0f068</item>
+        <item name="android:textSize">@dimen/textSize_regularSmall</item>
+        <item name="android:itemBackground">@color/popupMenu_bg</item>
+    </style>
+
+    <style name="datePickerItemStyle">
+        <item name="android:background">@drawable/date_picker_bg</item>
+        <item name="android:layout_width">@dimen/width_datePicker</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/myLightBlue</item>
+        <item name="android:textSize">@dimen/textSize_regularBig</item>
+        <item name="android:drawableTop">@drawable/up_normal</item>
+        <item name="android:drawableBottom">@drawable/down_normal</item>
+        <item name="android:radius">@dimen/radiusCorners_buttons</item>
+        <item name="android:drawablePadding">@dimen/padding_datePicker_drawable</item>
     </style>
 
 </resources>

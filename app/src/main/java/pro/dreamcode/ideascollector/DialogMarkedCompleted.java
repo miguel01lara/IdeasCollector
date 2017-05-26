@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import pro.dreamcode.ideascollector.adapters.MarkListener;
 
@@ -62,11 +61,12 @@ public class DialogMarkedCompleted extends DialogFragment {
         closeBtn = (ImageButton) view.findViewById(R.id.btn_close);
         markBtn = (Button) view.findViewById(R.id.btn_mark_completed);
 
+        AppIdeasCollector.setRalewayThin(getActivity(), markBtn);
+
         arguments = getArguments();
 
         if (arguments != null){
             position = arguments.getInt("POSITION");
-            Toast.makeText(getActivity(), "Poisition: " + position, Toast.LENGTH_SHORT).show();
         }
 
         Drawable d;

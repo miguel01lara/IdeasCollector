@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/menu_item_least_time"
-        android:title="@string/nearest_first" />
+        android:title="@string/nearest_first"/>
     <item
         android:id="@+id/menu_item_most_time"
         android:title="@string/furthest_first" />

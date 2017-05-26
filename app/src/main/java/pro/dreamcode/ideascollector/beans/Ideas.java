@@ -15,15 +15,7 @@ public class Ideas extends RealmObject{
     private long plannedTime;
     private boolean completed;
 
-    public Ideas() {
-    }
-
-    public Ideas(String description, long initialTime, long plannedTime, boolean completed) {
-        this.setDescription(description);
-        this.setInitialTime(initialTime);
-        this.setPlannedTime(plannedTime);
-        this.setCompleted(completed);
-    }
+    public Ideas() {}
 
     public String getDescription() {
         return description;

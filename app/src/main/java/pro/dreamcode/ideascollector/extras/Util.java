@@ -44,4 +44,11 @@ public class Util {
             bullet.setImageResource(R.drawable.idea_bullet);
         }
     }
+
+    //TODO implementar métodos para traducir las fechas y referencias de tiempo a español
+    //TODO impementar métodos para validar la entrada del usuario (que no este vacía, posiblemente generar un Dialog)
+    //TODO modificar MarkedDialog para poder volver a poner idea como "incompleta", tras haberla completado.
+    //TODO implementar soporte multilenguaje
+    //TODO implementar interfaz de "Settings"
+    //TODO implementar dialog "About"
 }

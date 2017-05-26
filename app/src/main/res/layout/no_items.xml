@@ -7,13 +7,13 @@
 
     <TextView
         android:id="@+id/no_item1"
-        android:padding="4dp"
+        android:padding="@dimen/padding_ultraSmall"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_centerInParent="true"
         android:gravity="center"
         android:text="@string/no_items_to_display"
-        android:textSize="20dp"
+        android:textSize="@dimen/textSize_regularBig"
         android:foregroundGravity="bottom"/>
 
     <TextView
@@ -23,7 +23,7 @@
         android:gravity="center"
         android:layout_below="@id/no_item1"
         android:text="@string/try_with_another_filter"
-        android:textSize="12dp"
-        android:textColor="@color/yellow"/>
+        android:textSize="@dimen/textSize_regularUltraSmall"
+        android:textColor="@color/my_yellow"/>
 
 </RelativeLayout>

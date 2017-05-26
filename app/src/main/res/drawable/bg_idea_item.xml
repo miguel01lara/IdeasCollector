@@ -2,12 +2,12 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_pressed="true">
         <shape>
-            <solid android:color="@color/item_incomplete_pressed"/>
+            <solid android:color="@color/itemIncompletePressedOrComplete"/>
         </shape>
     </item>
     <item>
         <shape>
-            <solid android:color="@color/item_incomplete_normal"/>
+            <solid android:color="@color/itemIncompleteNormal"/>
         </shape>
     </item>
 </selector>

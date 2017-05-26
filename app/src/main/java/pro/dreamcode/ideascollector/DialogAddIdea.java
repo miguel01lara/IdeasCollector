@@ -8,14 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
-
-import java.util.Calendar;
+import android.widget.TextView;
 
 import io.realm.Realm;
 import pro.dreamcode.ideascollector.beans.Ideas;
+import pro.dreamcode.ideascollector.widgets.CollectorDatePicker;
 
 /**
  * Created by migue on 24/04/2017.
@@ -24,10 +23,11 @@ import pro.dreamcode.ideascollector.beans.Ideas;
 public class DialogAddIdea extends DialogFragment {
 
     private ImageButton closeBtn;
+    private TextView dialogAddTitle;
     private EditText ideaInput;
     private Button addIdeaBtn;
     private Realm realmMgmt;
-    private DatePicker datePicker;
+    private CollectorDatePicker datePicker;
 
     private View.OnClickListener clickListener = new View.OnClickListener() {
         @Override
@@ -47,19 +47,7 @@ public class DialogAddIdea extends DialogFragment {
         setStyle(DialogFragment.STYLE_NORMAL, R.style.MyDialogTheme);
     }
 
-    // TODO make a far better definition of the adding to Realm process
     private void addIdeaInfo() {
-        //
-        String date = datePicker.getDayOfMonth() + "/" + datePicker.getMonth() + "/" + datePicker.getYear();
-        final Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.DAY_OF_MONTH, datePicker.getDayOfMonth());
-        calendar.set(Calendar.MONTH, datePicker.getMonth());
-        calendar.set(Calendar.YEAR, datePicker.getYear());
-        calendar.set(Calendar.HOUR, 0);
-        calendar.set(Calendar.MINUTE, 0);
-        calendar.set(Calendar.SECOND, 0);
-        //
-        long initialTime = System.currentTimeMillis();
         final String ideaDescription = ideaInput.getText().toString();
 
         realmMgmt = Realm.getDefaultInstance();
@@ -69,7 +57,7 @@ public class DialogAddIdea extends DialogFragment {
             public void execute(Realm realm) {
                 Ideas idea = realmMgmt.createObject(Ideas.class, System.currentTimeMillis());
 
-                idea.setPlannedTime(calendar.getTimeInMillis());
+                idea.setPlannedTime(datePicker.getTime());
                 idea.setDescription(ideaDescription);
                 idea.setCompleted(false);
             }
@@ -89,16 +77,18 @@ public class DialogAddIdea extends DialogFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        datePicker = (DatePicker) view.findViewById(R.id.dpk_date_picker);
+        dialogAddTitle = (TextView)view.findViewById(R.id.txv_title_add_idea);
+        datePicker = (CollectorDatePicker) view.findViewById(R.id.dpk_date_picker);
         ideaInput = (EditText) view.findViewById(R.id.edt_idea_description);
         closeBtn = (ImageButton) view.findViewById(R.id.btn_close_add_idea);
         addIdeaBtn = (Button) view.findViewById(R.id.btn_add_idea);
 
         addIdeaBtn.setOnClickListener(clickListener);
         closeBtn.setOnClickListener(clickListener);
+
+        AppIdeasCollector.setRalewayThin(getActivity(), ideaInput, addIdeaBtn, dialogAddTitle);
     }
 
-    //TODO  temporary full-screen mechanism
     public void onStart() {
         super.onStart();
         Dialog dialog = getDialog();

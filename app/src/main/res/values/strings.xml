@@ -1,12 +1,17 @@
 <resources>
     <string name="app_name">Ideas Collector</string>
-    <string name="str_new_idea">New Idea</string>
-    <string name="str_add_idea_title">New Idea</string>
-    <string name="str_add_idea_btn">Add Idea</string>
-    <string name="furthest_first">Furthest First</string>
-    <string name="nearest_first">Nearest First</string>
-    <string name="completed_only">Completed Only</string>
-    <string name="pending_only">Pending Only</string>
-    <string name="no_items_to_display">No Items To Display</string>
-    <string name="try_with_another_filter">Try With Another Filter ;)</string>
+    <string name="new_idea">Idea Nueva</string>
+    <string name="add_idea">Agregar Idea</string>
+    <string name="furthest_first">Más Distantes</string>
+    <string name="nearest_first">Más Próximos</string>
+    <string name="completed_only">Completados</string>
+    <string name="pending_only">Pendientes</string>
+    <string name="no_items_to_display">No Hay Nada Que Mostrar</string>
+    <string name="try_with_another_filter">Por favor, intenta con otro filtro</string>
+    <string name="whats_on_your_mind">¿Qué pasa por tu mente?</string>
+    <string name="mark_completed">Marcar Como Completado</string>
+    <string name="filter_definition_holder">filter definition holder</string>
+    <string name="showing_holder">Mostrando: </string>
+    <string name="about">Acerca de...</string>
+    <string name="sans_serif_thin">sans-serif-thin</string>
 </resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="@color/myLightBlue"/>
+            <size android:width="@dimen/width_datePicker" android:height="@dimen/height_datePicker_arrowDrawable"/>
+            <corners android:topLeftRadius="@dimen/radiusCorners_buttons"
+                android:topRightRadius="@dimen/radiusCorners_buttons" />
+        </shape>
+    </item>
+
+    <item>
+        <bitmap android:src="@drawable/arrow_up_normal" android:gravity="center" />
+    </item>
+
+</layer-list>

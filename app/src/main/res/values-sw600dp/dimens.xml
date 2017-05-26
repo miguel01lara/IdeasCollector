@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="width_datePicker">136dp</dimen>
+    <dimen name="width_datePicker_space">24dp</dimen>
+    <dimen name="height_datePicker_arrowDrawable">36dp</dimen>
+    <dimen name="heightAndWidth_initialLogo">260dp</dimen>
+
+    <dimen name="padding_generalButtons">14dp</dimen>
+    <dimen name="marginTopAndBottom_datePicker">46dp</dimen>
+    <dimen name="padding_datePicker_drawable">10dp</dimen>
+    <dimen name="padding_closeBtnGeneral">14dp</dimen>
+    <dimen name="padding_dialogNewBorder">56dp</dimen>
+    <dimen name="padding_customEditText">18dp</dimen>
+
+    <dimen name="textSize_regularBig">32sp</dimen>
+    <dimen name="textSize_regularMedium">26sp</dimen>
+    <dimen name="textSize_regularUltraBig">36sp</dimen>
+    <dimen name="textSize_regularSmall">20sp</dimen>
+    <dimen name="textSize_regularUltraSmall">16sp</dimen>
+
+    <dimen name="radiusCorners_buttons">8dp</dimen>
+
+</resources>

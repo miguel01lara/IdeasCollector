@@ -3,15 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="10dp">
+    android:padding="@dimen/padding_ultraSmall"
+    android:background="@color/myDarkBlue">
 
     <TextView
-        android:layout_width="0dp"
+        android:id="@+id/order_holder"
+        android:layout_width="@dimen/zero"
         android:layout_weight="1"
         android:layout_height="wrap_content"
         android:gravity="end"
-        android:text="Showing: "
-        android:textSize="12sp"/>
+        android:text="@string/showing_holder"
+        android:textSize="@dimen/textSize_regularUltraSmall"/>
 
     <Button
         android:id="@+id/btn_set_order"
@@ -19,12 +21,12 @@
         android:layout_height="wrap_content"
         android:background="@null"
         android:gravity="center"
-        android:padding="0dp"
-        android:text="hola"
-        android:textSize="12sp"
+        android:padding="@dimen/padding_ultraSmall"
+        android:text="@string/filter_definition_holder"
+        android:textSize="@dimen/textSize_regularUltraSmall"
         android:textStyle="italic"
-        android:minHeight="0dp"
-        android:minWidth="0dp"
+        android:minHeight="@dimen/zero"
+        android:minWidth="@dimen/zero"
         android:textColor="@drawable/selector_order_btn" />
 
 </LinearLayout>

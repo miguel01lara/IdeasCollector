@@ -3,7 +3,9 @@ package pro.dreamcode.ideascollector;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.preference.PreferenceManager;
+import android.widget.TextView;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -39,5 +41,17 @@ public class AppIdeasCollector extends Application {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         int filterOption = preferences.getInt("filter",  Filter.LEAST_TIME_LEFT);
         return filterOption;
+    }
+
+    public static void setRalewayThin(Context context, TextView txv){
+        Typeface typeface = Typeface.createFromAsset(context.getAssets(), "fonts/raleway_extra_light.ttf");
+        txv.setTypeface(typeface);
+    }
+
+    public static void setRalewayThin(Context context, TextView... txv){
+        Typeface typeface = Typeface.createFromAsset(context.getAssets(), "fonts/raleway_extra_light.ttf");
+        for (TextView t: txv) {
+            t.setTypeface(typeface);
+        }
     }
 }

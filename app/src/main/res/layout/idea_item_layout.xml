@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/bg_idea_item"
-    android:padding="22dp" >
+    android:padding="@dimen/padding_recyclerItem" >
 
     <ImageView
         android:id="@+id/iv_bulb"
@@ -16,17 +16,20 @@
 
     <TextView
         android:id="@+id/tv_idea"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:paddingLeft="22dp"
-        android:paddingRight="22dp"
-        android:layout_weight="1"/>
+        android:paddingLeft="@dimen/paddingLeft_recyclerItem_ideaName"
+        android:paddingRight="@dimen/paddingRight_recyclerItem_ideaName"
+        android:textSize="@dimen/textSize_regularSmall"
+        android:layout_weight="1"
+        android:text="holder"/>
 
     <TextView
         android:id="@+id/tv_idea_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="end"/>
+        android:gravity="end"
+        android:textSize="@dimen/textSize_regularSmall"/>
 
 </LinearLayout>

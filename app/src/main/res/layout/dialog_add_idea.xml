@@ -1,50 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
 
-    <TextView
-        android:id="@+id/txv_title_add_idea"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/str_add_idea_title"
-        android:layout_margin="36dp"/>
-
-    <ImageButton
-        android:id="@+id/btn_close_add_idea"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/close_x"
-        android:layout_marginRight="36dp"
-        android:background="@null"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@id/txv_title_add_idea"/>
-
-    <EditText
-        android:id="@+id/edt_idea_description"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textVisiblePassword"
-        android:layout_below="@id/txv_title_add_idea"
-        android:padding="18dp"
-        android:hint="What's on your mind?"/>
+        android:layout_height="match_parent"
+        android:paddingRight="@dimen/padding_dialogNewBorder"
+        android:paddingLeft="@dimen/padding_dialogNewBorder"
+        android:layout_gravity="center">
 
-    <DatePicker
-        android:id="@+id/dpk_date_picker"
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:layout_below="@+id/edt_idea_description"
-        android:layout_alignLeft="@+id/txv_title_add_idea"
-        android:layout_alignStart="@+id/txv_title_add_idea" ></DatePicker>
+        <TextView
+            android:id="@+id/txv_title_add_idea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textSize_regularMedium"
+            android:text="@string/new_idea"
+            android:textColor="@color/my_yellow"/>
 
-    <Button
-        android:id="@+id/btn_add_idea"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/dpk_date_picker"
-        android:layout_centerHorizontal="true"
-        android:textAllCaps="false"
-        android:textSize="18dp"
-        android:text="@string/str_add_idea_btn"/>
+        <ImageButton
+            android:id="@+id/btn_close_add_idea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/close_x"
+            android:padding="@dimen/padding_closeBtnGeneral"
+            android:background="@null"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/txv_title_add_idea"/>
 
-</RelativeLayout>
+        <EditText
+            android:id="@+id/edt_idea_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textVisiblePassword"
+            android:layout_below="@id/txv_title_add_idea"
+            android:background="@drawable/bg_add_idea_btn_line"
+            android:layout_marginTop="@dimen/marginTop_whatsOnYourMind"
+            android:padding="@dimen/padding_customEditText"
+            android:textColor="@color/myDarkBlue"
+            android:textSize="@dimen/textSize_regularMedium"
+            android:hint="@string/whats_on_your_mind"
+            android:textColorHint="@color/myDarkBlueTransparent"/>
+
+        <pro.dreamcode.ideascollector.widgets.CollectorDatePicker
+            android:id="@+id/dpk_date_picker"
+            android:layout_below="@+id/edt_idea_description"
+            android:layout_marginTop="@dimen/marginTopAndBottom_datePicker"
+            android:layout_marginBottom="@dimen/marginTopAndBottom_datePicker"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_add_idea"
+            android:background="@drawable/bg_add_idea_btn_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dpk_date_picker"
+            android:layout_centerHorizontal="true"
+            android:textAllCaps="false"
+            android:textSize="@dimen/textSize_regularMedium"
+            android:textColor="@color/text_new_idea_btn"
+            android:padding="@dimen/padding_customEditText"
+            android:text="@string/add_idea"/>
+
+    </RelativeLayout>
+
+</ScrollView>
